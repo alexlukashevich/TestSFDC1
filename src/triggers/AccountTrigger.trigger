@@ -6,5 +6,8 @@ trigger AccountTrigger on Account (before insert) {
     //this is my first change
  if (Trigger.isBefore) {
      System.debug('Hello world');
+     for (Account a: Trigger.new) {
+         a.Phone= '1234';
+     }
  }
 }
